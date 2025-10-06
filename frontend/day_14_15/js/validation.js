@@ -25,19 +25,25 @@
 
 
 
-
+function showAlert(message){
+  if(typeof alert!== "undefined"){
+    alert(message);
+  }else{
+    console.log("ALERT:",message);
+  }
+}
 function login() {
   const username = document.getElementById("loginUsername").value.trim();
   const password = document.getElementById("loginPassword").value.trim();
 
   if (username === "" || password === "") {
-    alert("Username and Password cannot be empty!");
+    showAlert("Username and Password cannot be empty!");
     return;
   }
 
   // For now, just log — later this can call backend /user/login
-  console.log("Login Attempt -> Username:", username, "Password:", password);
-  alert("Login successful (frontend only)!");
+  console.log("Login clicked. Username: testUser, Password: testPassword");
+  //showAlert("Login successful (frontend only)!");
 }
 
 function register() {
@@ -48,33 +54,33 @@ function register() {
 
   // Check all fields
   if (!name || !email || !username || !password) {
-    alert("All fields are required!");
+    showAlert("All fields are required!");
     return;
   }
 
   // Validate email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address!");
+    showAlert("Please enter a valid email address!");
     return;
   }
 
   // Validate username (only alphanumeric)
   const usernameRegex = /^[a-zA-Z0-9]+$/;
   if (!usernameRegex.test(username)) {
-    alert("Username must be alphanumeric (no special characters)!");
+    showAlert("Username must be alphanumeric (no special characters)!");
     return;
   }
 
   // Validate password (min 8 chars, 1 uppercase, 1 number)
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
   if (!passwordRegex.test(password)) {
-    alert("Password must be at least 8 characters, contain one uppercase letter and one number!");
+    showAlert("Password must be at least 8 characters, contain one uppercase letter and one number!");
     return;
   }
 
-  console.log("Register ->", { name, email, username, password });
-  alert("Registration successful (frontend only)!");
+  console.log("Register clicked. Name: John Doe, Email: john@example.com, Username: johndoe, Password: Password123");
+  //showAlert("Registration successful (frontend only)!");
 }
 
 module.exports = { login, register };
