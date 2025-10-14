@@ -1,45 +1,35 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-@Component({
-  selector: 'app-team-create',
-  templateUrl: './teamcreate.component.html',
-  styleUrls: ['./teamcreate.component.css']
-})
-export class TeamCreateComponent {
-  teamForm: FormGroup;
-  successMessage: string = '';
-  errorMessage: string = '';
+<h3> Create Team</h3>
+<form [formGroup] = "teamForm" (ngSubmit) = "onSubmit()">
 
-  constructor(private fb: FormBuilder) {
-    this.teamForm = this.fb.group({
-      teamId: ['', Validators.required],
-      teamName: ['', Validators.required],
-      location: ['', Validators.required],
-      ownerName: ['', Validators.required],
-      establishmentYear: [new Date().getFullYear(), Validators.required]
-    });
-  }
+    <label for = "teamName">Team Name:</label>
+    <input type = "text" id = "teamName" name = "teamName" formControlName="teamName" required>
+    <div>
+        <small *ngIf = "teamName.invalid && teamName.touched">Team Name is required.</small>
+    </div>
 
-  onSubmit(): void {
-    if (this.teamForm.valid) {
-      this.successMessage = 'Team created successfully!';
-      this.errorMessage = '';
-    } else {
-      this.errorMessage = 'Please fill all required fields.';
-      this.successMessage = '';
-    }
-  }
+    <label for = "location">Location:</label>
+    <input type = "text" id = "location" name = "location" formControlName = "location" required>
+    <div>
+        <small *ngIf = "location.invalid && location.touched">Location is required.</small>
+    </div>
 
-  resetForm(): void {
-    this.teamForm.reset({
-      teamId: '',
-      teamName: '',
-      location: '',
-      ownerName: '',
-      establishmentYear: new Date().getFullYear()
-    });
-    this.successMessage = '';
-    this.errorMessage = '';
-  }
-}
+    <label for = "ownerName">Owner Name:</label>
+    <input type = "text" id = "ownerName" name = "ownerName" formControlName = "ownerName" required>
+    <div>
+        <small *ngIf = "ownerName.invalid && ownerName.touched">Owner Name is required.</small>
+    </div>
+
+    <label for = "establishmentYear">Establishment Year:</label>
+    <input type = "number" id = "establishmentYear" name = "establishmentYear" formControlName = "establishmentYear" required>
+    <div>
+        <small *ngIf = "establishmentYear.invalid && establishmentYear.touched">Establishment Year is required.</small>
+    </div>
+
+    <button type = "submit" [disabled] = "teamForm.invalid">Create Team</button>
+    
+    <small *ngIf = "isSubmitted && teamForm.valid" class = "success">{{successMessage}}</small>
+    <small *ngIf = "isSubmitted && teamForm.invalid" class = "error">{{errorMessage}}</small>
+
+    <button type = "button" (click) = "resetForm()" id = "resetBtn">Reset</button>
+</form>
