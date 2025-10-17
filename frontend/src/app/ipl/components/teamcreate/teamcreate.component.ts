@@ -33,7 +33,7 @@ export class TeamCreateComponent
         this.teamForm = this.fb.group(
             {
                 teamId: ['', [Validators.required]],
-                teamName: ['', [Validators.required]],
+                teamName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+$/)]],
                 location: ['', [Validators.required]],
                 ownerName: ['', [Validators.required]],
                 establishmentYear: ['', [Validators.required]]
