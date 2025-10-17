@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { Match } from '../../types/Match';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
