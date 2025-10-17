@@ -16,9 +16,8 @@ export class User {
         this.email=email;
         this.role=role;
     }
-    displayInfo(): void {
-        console.log(`User ID: ${this.userId}`);
-        console.log(`Full Name: ${this.fullName}`);
-        console.log(`Email: ${this.email}`);
-      }
+     displayInfo(): void
+    {
+        console.log(`User ID: ${this.userId}, Full Name: ${this.fullName}, Email: ${this.email}`);
+    }
 }
