@@ -14,9 +14,8 @@ export class Team {
         this.establishmentYear=establishmentYear;
     }
     
-    displayInfo(): void {
-        console.log(`Team ID: ${this.teamId}`);
-        console.log(`Team Name: ${this.teamName}`);
-        console.log(`Location: ${this.location}`);
+    displayInfo(): void
+    {
+        console.log(`Team ID: ${this.teamId}, Team Name: ${this.teamName}, Location: ${this.location}`);
     }
 }
