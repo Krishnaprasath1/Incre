@@ -10,9 +10,8 @@ export class TicketBooking {
         this.matchId=matchId;
         this.numberOfTickets=numberOfTickets;
     }
-    displayInfo(): void {
-        console.log(`Booking ID: ${this.bookingId}`);
-        console.log(`Email: ${this.email}`);
-        console.log(`Number of Tickets: ${this.numberOfTickets}`);
-      }
+     displayInfo(): void
+    {
+        console.log(`Booking ID: ${this.bookingId}, Email: ${this.email}, Number Of Tickets: ${this.numberOfTickets}`);
+    }
 }
