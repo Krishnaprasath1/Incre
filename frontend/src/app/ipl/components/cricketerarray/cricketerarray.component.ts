@@ -3,7 +3,7 @@ import { Cricketer } from "../../types/Cricketer";
 
 @Component({
     selector: 'app-cricketerarray',
-    //standalone: true,
+    //standalone: true,//
     templateUrl: './cricketerarray.component.html',
     styleUrls: ['./cricketerarray.component.scss']
 })
