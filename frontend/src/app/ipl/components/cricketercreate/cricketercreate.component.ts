@@ -31,7 +31,7 @@ export class CricketerCreateComponent
                 cricketerName: ['', [Validators.required]],
                 age: ['', [Validators.required]],
                 nationality: ['', [Validators.required]],
-                experience: ['', [Validators.required]],
+                experience: ['', [Validators.required, Validators.min(0)]],
                 role: ['', [Validators.required]],
                 totalRuns: ['', [Validators.required]],
                 totalWickets: ['', [Validators.required]],
