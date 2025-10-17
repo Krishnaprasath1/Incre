@@ -29,6 +29,7 @@
     <input type = "text" id = "experience" name = "experience" formControlName = "experience">
     <div>
         <small *ngIf = "experience.invalid && experience.touched">Experience is required.</small>
+        <small *ngIf = "experience?.errors?.['min']">Experience should be non-negative.</small>
     </div>
 
     <label for = "role">Role</label>
