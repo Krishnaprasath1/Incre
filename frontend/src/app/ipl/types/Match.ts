@@ -21,10 +21,9 @@ export class Match {
             this.winnerTeamId=winnerTeamId;
     }
 
-    displayInfo(): void {
-        console.log(`Match ID: ${this.matchId}`);
-        console.log(`Date: ${this.matchDate.toDateString()}`);
-        console.log(`Venue: ${this.venue}`);
-      }
+    displayInfo(): void
+    {
+        console.log(`Match ID: ${this.matchId}, Match Date: ${this.matchDate}, Venue: ${this.venue}`);
+    }
 
 }
