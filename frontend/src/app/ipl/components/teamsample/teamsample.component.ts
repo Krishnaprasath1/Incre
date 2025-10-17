@@ -23,12 +23,6 @@ export class TeamSampleComponent  {
         //     this.establishmentYear=establishmentYear;
         // }
         
-team: Team = new Team(
-  1,
-  'Chennai Super Kings',
-  'Chennai',
-  'India Cements',
-  2008
-);
+ team: Team  = new Team(1, "CSK", "Chennai", "Dhoni", 2011);
 
 }
