@@ -1,0 +1,57 @@
+# POST http://localhost:5000/user/register
+# Content-Type: application/json
+
+# {
+#   "fullName": "Krishna Prasath",
+#   "username": "krishna123",
+#   "password": "securePassword123",
+#   "email": "krishna@example.com",
+#   "role": "USER"
+# }
+
+
+# POST http://localhost:5000/user/login
+# Content-Type: application/json
+
+# {
+#   "username": "krishna123",
+#   "password": "securePassword123"
+
+# }
+
+
+# POST http://localhost:5000/user/register
+# Content-Type: application/json
+
+# {
+
+#  "fullName": "The Second Admin",
+#   "username": "adminofiplsec",
+#   "password": "ipl202502",
+#   "email": "adminnext123@example.com",
+#   "role": "ADMIN"
+# }
+
+
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+  "username": "adminofiplsec",
+  "password": "ipl202502"
+}
+
+
+
+# POST http://localhost:5000/team
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImFkbWlub2ZpcGwiLCJpYXQiOjE3NjA3ODk0MjMsImV4cCI6MTc2MDgyNTQyM30.zjDXNkhfTUnwYpfX-ZfB-i0F7GqH73IYhHbYgVNTtp4
+
+# {
+#   "teamName" : "Gujarat Titans",
+#   "location" : "Gujarat",
+#   "ownerName" : "Torrent",
+#   "establishmentYear" : 2020
+# }
+
+

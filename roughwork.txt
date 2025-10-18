@@ -1,0 +1,18 @@
+
+{
+  "teamName": "Royal Challengers Bangalore",
+  "location": "Bangalore",
+  "ownerName": "United Spirits",
+  "establishmentYear": 2008
+}
+### Create a new team
+POST https://ec2-3-108-194-132.projects.wecreateproblems.com/proxy/5000/team
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJub2RlIjoiVWFuYUlIsInN1YiI6ImFkbWlub2ZpcGwiLCJpYXQiOjE3ODcxMTM5NzQsImV4cCI6MTc2M2MyQzM0.wY0lHqbEV88ZNRIzSiuahBFIvBJ_Hl3-gc-7VO7zdO
+
+{
+  "teamName": "Sunrisers Hyderabad",
+  "location": "Hyderabad",
+  "ownerName": "Sun TV Network",
+  "establishmentYear": 2013
+}
