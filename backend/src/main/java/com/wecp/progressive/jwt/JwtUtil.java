@@ -34,6 +34,17 @@ public class JwtUtil {
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", "USER");
        return createToken(claims, username);
+
+    //  UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+    // String role = userDetails.getAuthorities().stream()
+    //                 .findFirst()
+    //                 .map(GrantedAuthority::getAuthority)
+    //                 .orElse("USER");
+
+     
+    //     Map<String, Object> claims = new HashMap<>();
+    //     claims.put("role", role);
+    //     return createToken(claims, username);
     }
  
     private String createToken(Map<String, Object> claims, String subject) {
@@ -53,6 +64,7 @@ public class JwtUtil {
         System.out.println(Arrays.hashCode(getSigningKey().getEncoded()));
         System.out.println("AVLO DHAN");
 
+     //get signing line doubt
         return Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
                 .build()
