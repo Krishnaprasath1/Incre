@@ -4,9 +4,13 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
+<<<<<<< HEAD
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+=======
+import org.springframework.security.core.userdetails.UserDetails;
+>>>>>>> 3340ca26d36d415324a4d336f01e4e6a7470ada1
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -24,7 +28,10 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtUtil {
  
+<<<<<<< HEAD
     private UserDetailsService userDetailsService;
+=======
+>>>>>>> 3340ca26d36d415324a4d336f01e4e6a7470ada1
     private final String secret = "secretKey000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     private final int expiration = 1000 * 60 * 60 * 10; // 10 hours
  
@@ -34,6 +41,7 @@ public class JwtUtil {
     }
  
     public String generateToken(String username) {
+<<<<<<< HEAD
     //     Map<String, Object> claims = new HashMap<>();
     //     claims.put("role", "USER");
     //    return createToken(claims, username);
@@ -48,6 +56,22 @@ public class JwtUtil {
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", role);
         return createToken(claims, username);
+=======
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", "USER");
+       return createToken(claims, username);
+
+    //  UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+    // String role = userDetails.getAuthorities().stream()
+    //                 .findFirst()
+    //                 .map(GrantedAuthority::getAuthority)
+    //                 .orElse("USER");
+
+     
+    //     Map<String, Object> claims = new HashMap<>();
+    //     claims.put("role", role);
+    //     return createToken(claims, username);
+>>>>>>> 3340ca26d36d415324a4d336f01e4e6a7470ada1
     }
  
     private String createToken(Map<String, Object> claims, String subject) {

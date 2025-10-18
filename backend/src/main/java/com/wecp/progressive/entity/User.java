@@ -1,6 +1,9 @@
 package com.wecp.progressive.entity;
 
+<<<<<<< HEAD
 import javax.persistence.Column;
+=======
+>>>>>>> 3340ca26d36d415324a4d336f01e4e6a7470ada1
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +16,10 @@ public class User
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
     private String fullName;
+<<<<<<< HEAD
     @Column(unique=true)//added
+=======
+>>>>>>> 3340ca26d36d415324a4d336f01e4e6a7470ada1
     private String username;
     private String password;
     private String email;

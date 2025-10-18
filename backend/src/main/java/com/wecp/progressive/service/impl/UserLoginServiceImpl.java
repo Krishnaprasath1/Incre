@@ -61,7 +61,11 @@ public class UserLoginServiceImpl implements UserDetailsService {
       return org.springframework.security.core.userdetails.User
       .withUsername(user.getUsername())
       .password(user.getPassword())
+<<<<<<< HEAD
       .authorities(user.getRole())
+=======
+      .roles(user.getRole())
+>>>>>>> 3340ca26d36d415324a4d336f01e4e6a7470ada1
       .build();
         // UserDetails userDetailsObj = new org.springframework.security.core.userdetails.User(
         //     user.getUsername(), user.getPassword(),
