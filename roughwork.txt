@@ -1,0 +1,31 @@
+POST http://localhost:5000/match
+Content-Type: application/json
+Authorization: Bearer <your-jwt-token>
+
+{
+  "firstTeamId": 1,
+  "secondTeamId": 2,
+  "matchDate": "2025-11-01",
+  "venue": "Wankhede Stadium",
+  "result": "Pending",
+  "status": "Scheduled",
+  "winnerTeamId": 0
+}
+
+
+
+-----update
+PUT http://localhost:5000/match/1
+Content-Type: application/json
+Authorization: Bearer <your-jwt-token>
+
+{
+  "matchId": 1,
+  "firstTeamId": 1,
+  "secondTeamId": 2,
+  "matchDate": "2025-11-01",
+  "venue": "Wankhede Stadium",
+  "result": "Team 1 won",
+  "status": "Completed",
+  "winnerTeamId": 1
+}
