@@ -1,0 +1,252 @@
+# POST http://localhost:5000/user/register
+# Content-Type: application/json
+
+# {
+#   "fullName": "hari",
+#   "username": "hari123",
+#   "password": "Hari123",
+#   "email": "hari@example.com",
+#   "role": "USER"
+# }
+
+
+# POST http://localhost:5000/user/login
+# Content-Type: application/json
+
+# {
+#   "username": "krishna123",
+#   "password": "securePassword123"
+# }
+
+
+# POST http://localhost:5000/user/register
+# Content-Type: application/json
+
+# {
+
+#  "fullName": "The Second Admin",
+#   "username": "krishadmin",
+#   "password": "krishadmin1",
+#   "email": "adminkris123@example.com",
+#   "role": "ADMIN"
+# }
+
+
+#admin odathu
+
+# POST http://localhost:5000/user/login
+# Content-Type: application/json
+
+# {
+#   "username": "krishadmin",
+#   "password": "krishadmin1"
+# }
+
+#krishadmin1
+#ipl202502
+
+
+
+
+# POST http://localhost:5000/team
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+# {
+#   "teamName" : "Royal Challengers Bangalore",
+#   "location" : "Bengaluru",
+#   "ownerName" : "Kingfishers",
+#   "establishmentYear" : 2008
+# }
+
+
+
+
+
+#user odathu
+
+# GET http://localhost:5000/team/6
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA4MTM4NTQsImV4cCI6MTc2MDg0OTg1NH0.bGh8UVhLMBpNNZEP4Sf1YfROwd1Nk_SRaegSFyIgJWU
+
+
+# PUT http://localhost:5000/team/9
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhZG1pbm9maXBsc2VjIiwiaWF0IjoxNzYwODE2MTUzLCJleHAiOjE3NjA4NTIxNTN9.6LjAc_u8U8mji6tYNu3nAyi-eAqaF-15khfLkOVSGsI
+
+# {
+#     "teamId" : 9,
+#   "teamName" : "Sunrisers Hyderabad",
+#   "location" : "Hyderabad",
+#   "ownerName" : "KalanithiMaran",
+#   "establishmentYear" : 2008
+# }
+
+
+# DELETE http://localhost:5000/team/10
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhZG1pbm9maXBsc2VjIiwiaWF0IjoxNzYwODE2MTUzLCJleHAiOjE3NjA4NTIxNTN9.6LjAc_u8U8mji6tYNu3nAyi-eAqaF-15khfLkOVSGsI
+
+
+
+
+
+# #use recent login user
+# GET http://localhost:5000/team/fromArrayList
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA4MTM4NTQsImV4cCI6MTc2MDg0OTg1NH0.bGh8UVhLMBpNNZEP4Sf1YfROwd1Nk_SRaegSFyIgJWU
+
+
+# POST http://localhost:5000/team/fromArrayList
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhZG1pbm9maXBsc2VjIiwiaWF0IjoxNzYwODE2MTUzLCJleHAiOjE3NjA4NTIxNTN9.6LjAc_u8U8mji6tYNu3nAyi-eAqaF-15khfLkOVSGsI
+
+# {
+#    "teamName" : "Lucknow Giants",
+#   "location" : "Lucknow",
+#   "ownerName" : "Lucky Guy",
+#   "establishmentYear" : 2018
+# }
+
+# GET http://localhost:5000/team/fromArrayList/sorted
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA4MTM4NTQsImV4cCI6MTc2MDg0OTg1NH0.bGh8UVhLMBpNNZEP4Sf1YfROwd1Nk_SRaegSFyIgJWU
+
+
+
+#user and team endpoints over raa
+
+
+
+# POST http://localhost:5000/cricketer
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+# {
+#     "teamId" : 3,
+#     "cricketerName": "Dwayne Smith",
+#     "age" : 31,
+#     "nationality" : "West Indies",
+#     "experience" : 7,
+#     "role" : "Batsman",
+#     "totalRuns" : 3456,
+#     "totalWickets" : 33
+# }
+
+
+# #team da
+# GET http://localhost:5000/cricketer
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA4MTM4NTQsImV4cCI6MTc2MDg0OTg1NH0.bGh8UVhLMBpNNZEP4Sf1YfROwd1Nk_SRaegSFyIgJWU
+
+
+# GET http://localhost:5000/cricketer/11
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA4MTM4NTQsImV4cCI6MTc2MDg0OTg1NH0.bGh8UVhLMBpNNZEP4Sf1YfROwd1Nk_SRaegSFyIgJWU
+
+
+
+
+# PUT http://localhost:5000/cricketer/11
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhZG1pbm9maXBsc2VjIiwiaWF0IjoxNzYwODE2MTUzLCJleHAiOjE3NjA4NTIxNTN9.6LjAc_u8U8mji6tYNu3nAyi-eAqaF-15khfLkOVSGsI
+
+# {
+#     "cricketerId" : 11,
+#     "teamId" : 6,
+#     "cricketerName": "Steve Smith",
+#     "age" : 31,
+#     "nationality" : "Australian",
+#     "experience" : 7,
+#     "role" : "Batsman",
+#     "totalRuns" : 3456,
+#     "totalWickets" : 33
+# }
+
+
+
+# GET http://localhost:5000/cricketer/team/33
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA4MTM4NTQsImV4cCI6MTc2MDg0OTg1NH0.bGh8UVhLMBpNNZEP4Sf1YfROwd1Nk_SRaegSFyIgJWU
+
+
+# DELETE http://localhost:5000/cricketer/11
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhZG1pbm9maXBsc2VjIiwiaWF0IjoxNzYwODE2MTUzLCJleHAiOjE3NjA4NTIxNTN9.6LjAc_u8U8mji6tYNu3nAyi-eAqaF-15khfLkOVSGsI
+
+# POST http://localhost:5000/match
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+# {
+#   "firstTeam":{
+#         "teamId": 2
+#     },
+#     "secondTeam":{
+#         "teamId": 3
+#     },
+#     "matchDate": "2025-10-27",
+#     "venue": "Chennai",
+#     "result": "Team RCB won",
+#     "status": "Interuppted due to Rain",
+#     "winnerTeam": {
+#       "teamId": 3
+#     }
+# }
+
+
+# PUT http://localhost:5000/match/10
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+# {
+#  "firstTeam":{
+#         "teamId": 2
+#     },
+#     "secondTeam":{
+#         "teamId": 3
+#     },
+#     "matchDate": "2025-10-20",
+#     "venue": "Che",
+#     "result": "Team RCB won",
+#     "status": "Completed",
+#     "winnerTeam": {
+#       "teamId": 2
+#     }
+# }
+
+# DELETE http://localhost:5000/match/13
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+
+# GET http://localhost:5000/match/11
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA5MDMxNjcsImV4cCI6MTc2MDkzOTE2N30.EIb7pzQIp1necGniIuzqs4_eJ-lorxvujlGZMAibkmY
+
+
+# GET http://localhost:5000/match/status/Completed
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA5MDMxNjcsImV4cCI6MTc2MDkzOTE2N30.EIb7pzQIp1necGniIuzqs4_eJ-lorxvujlGZMAibkmY
+
+# POST http://localhost:5000/ticket
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImtyaXNobmExMjMiLCJpYXQiOjE3NjA5MDMxNjcsImV4cCI6MTc2MDkzOTE2N30.EIb7pzQIp1necGniIuzqs4_eJ-lorxvujlGZMAibkmY
+
+# {
+#   "email": "abcdehna@gmail.com",
+#   "match": {
+#     "matchId": 11
+#   },
+#   "team": {
+#     "teamId": 2
+#   },
+#   "numberOfTickets": 3
+# }
+
+
+# GET http://localhost:5000/ticket
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+
+
+# GET http://localhost:5000/ticket/user/krishna@example.com
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+
+
+# DELETE http://localhost:5000/ticket/4
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
+
+
+GET http://localhost:5000/cricketer
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJrcmlzaGFkbWluIiwiaWF0IjoxNzYwODk4MzMwLCJleHAiOjE3NjA5MzQzMzB9.qtyzqTQ9jc7Yt7qfPfkTJP29R-vzf0_pI--4htQXoB4
