@@ -1,0 +1,7 @@
+.antMatchers(HttpMethod.POST, "/team").hasAuthority("ROLE_ADMIN")
+.antMatchers(HttpMethod.POST, "/team/**").hasAuthority("ROLE_ADMIN")
+.antMatchers(HttpMethod.POST, "/cricketer").hasAuthority("ROLE_ADMIN")
+.antMatchers(HttpMethod.POST, "/match").hasAuthority("ROLE_ADMIN")
+.antMatchers(HttpMethod.PUT, "/team**", "/cricketer/**", "/match/**").hasAuthority("ROLE_ADMIN")
+.antMatchers(HttpMethod.DELETE, "/team/**", "/cricketer/**", "/match/**").hasAuthority("ROLE_ADMIN")
+.antMatchers(HttpMethod.GET, "/vote/**", "/ticket/**").hasAuthority("ROLE_ADMIN")

@@ -1,0 +1,119 @@
+/* Container styling */
+.team-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.team-form-container h2 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+/* Form fields */
+.team-form-container form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #1e3a8a;
+  outline: none;
+}
+
+/* Error messages */
+.error small {
+  color: #e74c3c;
+  font-size: 13px;
+}
+
+/* Success and error message boxes */
+.success, .error {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Buttons */
+button[type="submit"] {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3b82f6;
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Dashboard link */
+a.task-list {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+
+.task-list:hover {
+  color: #3b82f6;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
