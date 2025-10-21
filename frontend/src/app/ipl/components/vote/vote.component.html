@@ -1,0 +1,101 @@
+<div class="vote-form-container container mt-4 p-4 rounded shadow-lg">
+  <h2 class="text-center mb-4" style="color: #4B0082;">Submit Your Vote</h2>
+
+  <form [formGroup]="voteForm" (ngSubmit)="onSubmit()">
+    <!-- Email field -->
+    <div class="form-group mb-3">
+      <label for="email" style="color: #4B0082;">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        class="form-control border border-2"
+        placeholder="Enter Email"
+        style="border-color:#854ca5;"
+      />
+      <div
+        *ngIf="voteForm.get('email')?.invalid && voteForm.get('email')?.touched"
+        class="text-danger mt-1"
+      >
+        <small>Email is required and must be valid.</small>
+      </div>
+    </div>
+
+    <!-- Category selection -->
+    <div class="form-group mb-3">
+      <label for="category" style="color: #4B0082;">Category:</label>
+      <select
+        formControlName="category"
+        class="form-select border border-2"
+        style="border-color:#854ca5;"
+      >
+        <option value="">Select Category</option>
+        <option value="Cricketer">Cricketer</option>
+        <option value="Team">Team</option>
+      </select>
+      <div
+        *ngIf="voteForm.get('category')?.invalid && voteForm.get('category')?.touched"
+        class="text-danger mt-1"
+      >
+        <small>Category is required.</small>
+      </div>
+    </div>
+
+    <!-- Cricketer Selection -->
+    <div *ngIf="voteForm.get('category')?.value === 'Cricketer'" class="form-group mb-3">
+      <label for="cricketer" style="color: #4B0082;">Cricketer</label>
+      <select
+        id="cricketer"
+        formControlName="cricketer"
+        class="form-select border border-2"
+        style="border-color:#854ca5;"
+      >
+        <option value="">Select a Cricketer</option>
+        <option *ngFor="let cricketer of cricketers" [ngValue]="cricketer">
+          {{ cricketer.cricketerName }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Team Selection -->
+    <div *ngIf="voteForm.get('category')?.value === 'Team'" class="form-group mb-3">
+      <label for="team" style="color: #4B0082;">Team</label>
+      <select
+        id="team"
+        formControlName="team"
+        class="form-select border border-2"
+        style="border-color:#854ca5;"
+      >
+        <option value="">Select a Team</option>
+        <option *ngFor="let team of teams" [ngValue]="team">
+          {{ team.teamName }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Submit & Dashboard buttons -->
+    <button
+      type="submit"
+      [disabled]="voteForm.invalid"
+      class="btn w-100 mb-2"
+      style="background-color:#4B0082; color:white;"
+    >
+      Submit Vote
+    </button>
+    <a
+      routerLink="/ipl"
+      class="btn w-100"
+      style="background-color:#854ca5; color:white;"
+    >
+      Dashboard
+    </a>
+  </form>
+
+  <!-- Success/Error messages -->
+  <div *ngIf="successMessage" class="alert mt-3" style="background-color:#e6d6f5; color:#4B0082;">
+    <p class="m-0">{{ successMessage }}</p>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    <p class="m-0">{{ errorMessage }}</p>
+  </div>
+</div>

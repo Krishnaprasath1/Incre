@@ -1,0 +1,137 @@
+<div class="match-form-container container mt-4 p-4 rounded shadow-sm">
+  <h2 class="text-center mb-4" style="color:#4B0082;">Create Match</h2>
+
+  <form [formGroup]="matchForm" (ngSubmit)="onSubmit()">
+
+    <!-- First Team -->
+    <div class="form-group mb-3">
+      <label for="firstTeam" style="color:#4B0082;">First Team</label>
+      <select
+        id="firstTeam"
+        formControlName="firstTeam"
+        class="form-select border border-2"
+        style="border-color:#854ca5;"
+      >
+        <option value="">Select a Team</option>
+        <option *ngFor="let team of teams" [ngValue]="team">
+          {{ team.teamName }}
+        </option>
+      </select>
+      <div *ngIf="matchForm.get('firstTeam')?.invalid && matchForm.get('firstTeam')?.touched" class="text-danger mt-1">
+        <small>First team selection is required.</small>
+      </div>
+    </div>
+
+    <!-- Second Team -->
+    <div class="form-group mb-3">
+      <label for="secondTeam" style="color:#4B0082;">Second Team</label>
+      <select
+        id="secondTeam"
+        formControlName="secondTeam"
+        class="form-select border border-2"
+        style="border-color:#854ca5;"
+      >
+        <option value="">Select a Team</option>
+        <option *ngFor="let team of teams" [ngValue]="team">
+          {{ team.teamName }}
+        </option>
+      </select>
+      <div *ngIf="matchForm.get('secondTeam')?.invalid && matchForm.get('secondTeam')?.touched" class="text-danger mt-1">
+        <small>Second team selection is required.</small>
+      </div>
+    </div>
+
+    <!-- Match Date -->
+    <div class="form-group mb-3">
+      <label for="matchDate" style="color:#4B0082;">Match Date</label>
+      <input
+        id="matchDate"
+        formControlName="matchDate"
+        type="date"
+        class="form-control border border-2"
+        placeholder="Enter Match Date"
+        style="border-color:#854ca5;"
+      />
+      <div *ngIf="matchForm.get('matchDate')?.invalid && matchForm.get('matchDate')?.touched" class="text-danger mt-1">
+        <small>Match date is required.</small>
+      </div>
+    </div>
+
+    <!-- Venue -->
+    <div class="form-group mb-3">
+      <label for="venue" style="color:#4B0082;">Venue</label>
+      <input
+        id="venue"
+        formControlName="venue"
+        type="text"
+        class="form-control border border-2"
+        placeholder="Enter Venue"
+        style="border-color:#854ca5;"
+      />
+      <div *ngIf="matchForm.get('venue')?.invalid && matchForm.get('venue')?.touched" class="text-danger mt-1">
+        <small>Venue is required.</small>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="form-group mb-3">
+      <label for="result" style="color:#4B0082;">Result</label>
+      <input
+        id="result"
+        formControlName="result"
+        type="text"
+        class="form-control border border-2"
+        placeholder="Enter Result"
+        style="border-color:#854ca5;"
+      />
+      <div *ngIf="matchForm.get('result')?.invalid && matchForm.get('result')?.touched" class="text-danger mt-1">
+        <small>Result is required.</small>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="form-group mb-3">
+      <label for="status" style="color:#4B0082;">Status</label>
+      <input
+        id="status"
+        formControlName="status"
+        type="text"
+        class="form-control border border-2"
+        placeholder="Enter Status"
+        style="border-color:#854ca5;"
+      />
+      <div *ngIf="matchForm.get('status')?.invalid && matchForm.get('status')?.touched" class="text-danger mt-1">
+        <small>Status is required.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn w-100"
+      [disabled]="matchForm.invalid"
+      style="background-color:#4B0082; color:white;"
+    >
+      Create Match
+    </button>
+
+    <!-- Dashboard Link -->
+    <a
+      routerLink="/ipl"
+      class="btn w-100 mt-2"
+      style="background-color:#854ca5; color:white;"
+    >
+      Dashboard
+    </a>
+  </form>
+
+  <!-- Success message -->
+  <div *ngIf="successMessage" class="alert mt-3" style="background-color:#e6d6f5; color:#4B0082;">
+    <p class="m-0">{{ successMessage }}</p>
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    <p class="m-0">{{ errorMessage }}</p>
+  </div>
+</div>
