@@ -12,7 +12,6 @@ export class NavBarComponent implements OnInit {
 
   role:string|null;
   ngOnInit(): void {
-
     console.log(localStorage.getItem("role"));
     this.role=(localStorage.getItem("role") || '').toUpperCase();
   }

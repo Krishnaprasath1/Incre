@@ -41,7 +41,7 @@ export class TeamCreateComponent implements OnInit {
     });
   }
  
-  // Form submission handler
+ 
   onSubmit(): void {
     if (this.teamForm.valid) {
       this.addTeam();
@@ -51,12 +51,11 @@ export class TeamCreateComponent implements OnInit {
     }
   }
  
-  // Method to call backend service and handle the response
+ 
   private addTeam(): void {
     this.iplService.addTeam(this.teamForm.value).subscribe(
       (response: Team) => {
-        // Ensure that we are treating the response correctly as a Team
-        this.team = response;  // This should be of type Team
+        this.team = response;  
         this.successMessage = 'Team created successfully!';
         this.errorMessage = null;
         setTimeout(() => {this.resetForm(); this.successMessage; this.router.navigate(['/ipl'])}, 7000);

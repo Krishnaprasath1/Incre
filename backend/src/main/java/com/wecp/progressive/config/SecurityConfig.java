@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //cross origin resource sharing | cross site req forgery
         http.cors().and().csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/user/register" , "/user/login").permitAll()

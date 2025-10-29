@@ -51,7 +51,7 @@ export class RegistrationComponent
                 this.user = {...this.registrationForm.value};
             this.successMessage = "Registration successful!";
             this.errorMessage = '';
-            setTimeout(()=>{ this.resetForm(); this.router.navigate(["auth/login"]);}, 7000);
+            setTimeout(()=>{ this.resetForm(); this.router.navigate(["auth/login"]);}, 3000);
                 },
             error => {
                 this.errorMessage = error.error || "An Error Occurred During Registration.";

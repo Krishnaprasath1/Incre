@@ -32,8 +32,7 @@ public class UserLoginController
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleException(Exception rtEx)
-    {   
+    public ResponseEntity<?> handleException(Exception rtEx){   
         return (new ResponseEntity<String>(rtEx.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR));
     }
 
